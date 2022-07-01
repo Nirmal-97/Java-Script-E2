@@ -202,3 +202,15 @@ Used to call and/or provide the context (object) for a function that is dependan
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+Safeguarding Function Parameters
+
+The solution is to safeguard the value by checking its type. JavaScript has a
+built-in directive typeof that we can use before calling the function:
+
+The function Fun(array) was called. The function expects a function name as
+an argument but an array was sent. The typeof test failed and nothing happened
+but at least our program didn’t break.
+You can do the same with other types if it becomes imperative that a particular
+value must be in absolute compliance with a particular type.
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
