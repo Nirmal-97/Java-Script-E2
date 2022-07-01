@@ -1,5 +1,3 @@
-
-
 Anonymous Function 
 
 A function that does not have any name associated with it. Normally we use the function keyword before the function name to define a function in JavaScript, however, in anonymous functions in JavaScript, we use only the function keyword without the function name.
@@ -126,5 +124,72 @@ Features of By reference:
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+THIS INSIDE FUNCTION
+
+this
+
+A function's this keyword behaves a little differently in JavaScript compared to other languages. It also has some differences between strict mode and non-strict mode.
+
+In most cases, the value of this is determined by how a function is called (runtime binding). It can't be set by assignment during execution, and it may be different each time the function is called. ES5 introduced the bind() method to set the value of a function's this regardless of how it's called, and ES2015 introduced arrow functions which don't provide their own this binding (it retains the this value of the enclosing lexical context.
+
+Eg:
+
+const test = {
+  prop: 42,
+  func: function() {
+    return this.prop;
+  },
+};
+
+console.log(test.func());
+// expected output: 42
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Arity Definitions
+
+In programming circles where function arity is explicitly discussed, there is a set of related labels which are used to describe different kinds of function arity based on the number of arguments expected by a given function. They are:
+
+Nullary: zero arguments
+Unary: one argument
+Binary: two arguments
+Ternary: three arguments
+N-ary: having N arguments
+Variadic: having a variable number of arguments
+While it is possible that you may encounter specific names for a set of 4 or more arguments, it is uncommon. See the Wikipedia article on the topic for a more elaborate list of names available: Function arity.
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Currying
+Currying is an advanced technique of working with functions. It’s used not only in JavaScript, but in other languages as well.
+
+Currying is a transformation of functions that translates a function from callable as f(a, b, c) into callable as f(a)(b)(c).
+
+Currying doesn’t call a function. It just transforms it.
+
+Let’s see an example first, to better understand what we’re talking about, and then practical applications.
+
+We’ll create a helper function curry(f) that performs currying for a two-argument f. In other words, curry(f) for two-argument f(a, b) translates it into a function that runs as f(a)(b)
+
+Eg:
+
+function curry(f) { // curry(f) does the currying transform
+  return function(a) {
+    return function(b) {
+      return f(a, b);
+    };
+  };
+}
+
+// usage
+function sum(a, b) {
+  return a + b;
+}
+
+let curriedSum = curry(sum);
+
+alert( curriedSum(1)(2) ); // 3
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
