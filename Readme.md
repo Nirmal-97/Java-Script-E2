@@ -192,4 +192,13 @@ alert( curriedSum(1)(2) ); // 3
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+NAMED FUNCTION
+
+Named Functions: In JavaScript, named functions are simply a way of referring to a function that employs the function keyword followed by a name that can be used as a callback to that function. Normal functions with a name or identifier are known as named functions.
+
+Function Assignment in JavaScript
+
+Used to call and/or provide the context (object) for a function that is dependant on an object. Often, functions are assigned to objects and access object members using the 'this' keyword.
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
