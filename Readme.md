@@ -61,6 +61,13 @@ const numbers = [1, 2, 3, 4];
 const doubled = numbers.map(item => item * 2);
 console.log(doubled); // [2, 4, 6, 8]
 
+const arr = [2, 4, 6, 8, 10];
+function double(x) {
+    return x * 3;
+}
+const output = arr.map(double);
+console.log(output)
+
 Reduce
 
 The reduce() method reduces an array of values down to just one value. To get the output value, it runs a reducer function on each element of the array.
